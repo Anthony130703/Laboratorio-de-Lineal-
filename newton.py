@@ -50,15 +50,9 @@ def evaluar_newton(x_vals, coeficientes, x):
         resultado += producto
     return resultado
 
-# Solicitar puntos
-x = []
-y = []
-n = int(input("¿Cuántos puntos vas a ingresar? "))
-for i in range(n):
-    xi = float(input(f"Ingrese x_{i+1}: "))
-    yi = float(input(f"Ingrese y_{i+1}: "))
-    x.append(xi)
-    y.append(yi)
+# Datos de los 8 puntos dados
+x = [500, 700, 900, 1100, 1300, 1500, 1700, 1900]
+y = [365, 361.6, 370.64, 379.68, 384.46, 395.5, 395.95, 397]
 
 # Construir matriz A y resolver el sistema
 A = construir_matriz_newton(x)
@@ -73,15 +67,15 @@ for i, a in enumerate(coeficientes):
 imprimir_polinomio(coeficientes, x)
 
 # Graficar
-x_graf = np.linspace(min(x) - 1, max(x) + 1, 500)
+x_graf = np.linspace(min(x) , max(x) , 400)
 y_graf = [evaluar_newton(x, coeficientes, xi) for xi in x_graf]
 
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(10, 6))
 plt.plot(x_graf, y_graf, label="Polinomio de Newton", color='blue')
 plt.scatter(x, y, color='red', label="Puntos dados")
 plt.title("Interpolación por el Polinomio de Newton")
-plt.xlabel("x")
-plt.ylabel("P(x)")
+plt.xlabel("Q")
+plt.ylabel("N")
 plt.legend()
 plt.grid(True)
 plt.show()
