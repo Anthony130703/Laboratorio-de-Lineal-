@@ -57,7 +57,7 @@ x_vals = np.linspace(min(Q), max(Q), 400)
 y_vals = [float(polynomial.subs(x, val)) for val in x_vals]
 
 # Graficamos la curva
-plt.plot(x_vals, y_vals, label='Polinomio de Interpolación', color='blue')
+plt.plot(x_vals, y_vals, label='Polinomio de Interpolación', color='black')
 # Graficamos los puntos conocidos originalmente
 plt.scatter(Q, N, color='red', label='Puntos de Interpolación')
 # Añadimos Etiquetas
