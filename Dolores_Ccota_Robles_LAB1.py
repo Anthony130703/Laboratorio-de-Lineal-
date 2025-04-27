@@ -1,3 +1,9 @@
+#! /usr/bin/python3
+from numpy import *
+import matplotlib.pyplot as plt # from pylab import plot,show
+import warnings
+warnings.filterwarnings("ignore")
+
 import matplotlib.pyplot as plt
 import numpy as np
 from sympy import symbols, expand #Librerias
